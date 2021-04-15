@@ -4,13 +4,76 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <title>Objetos</title>
 </head>
 <body>
-  <h1>Objetos</h1>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          A-Z
+        </a>
+  
+        <div id="especie" class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Especie
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a onclick="onclickSpecie('All')" class="navbar-item">
+              All
+            </a>
+            <a onclick="onclickSpecie('Human')" class="navbar-item">
+              Human
+            </a>
+            <a onclick="onclickSpecie('Alien')" class="navbar-item">
+              Alien
+            </a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Genero
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a onclick="handlerOnclick('All')" class="navbar-item">
+              All
+            </a>
+            <a onclick="handlerOnclick('Male')" class="navbar-item">
+              Male
+            </a>
+            <a onclick="handlerOnclick('Female')" class="navbar-item">
+              Female
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <div id="root" class="columns is-flex-wrap-wrap">
+    </div>
+  </main>
   
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
+  <script src="./rick.js"></script>
+  <script src="./main.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
