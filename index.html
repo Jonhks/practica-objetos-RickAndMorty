@@ -23,9 +23,33 @@
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
-          A-Z
-        </a>
+        <div id="especie" class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Fechas
+          </a>
+          <div class="navbar-dropdown">
+            <a onclick="onclickDate('nuevo')" class="navbar-item">
+              Nuevo
+            </a>
+            <a onclick="onclickDate('antiguo')" class="navbar-item">
+              Antiguo
+            </a>
+          </div>
+        </div>
+
+        <div id="especie" class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Ordenar
+          </a>
+          <div class="navbar-dropdown">
+            <a onclick="onclickOrder('a-z')" class="navbar-item">
+              A-Z
+            </a>
+            <a onclick="onclickOrder('z-a')" class="navbar-item">
+              Z-A
+            </a>
+          </div>
+        </div>
   
         <div id="especie" class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">

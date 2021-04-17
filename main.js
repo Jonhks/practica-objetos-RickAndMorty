@@ -1,6 +1,7 @@
 const rickAndMorty = data.results;
 
 const root = document.getElementById('root');
+const alfabetico = document.getElementById('alfabetico')
 
 const printData = rickAndMorty => {
   let cajita = '';
@@ -46,4 +47,55 @@ const handlerOnclick = (type) => filterData(rickAndMorty, type, 'gender');
 const onclickSpecie = (type) => filterData(rickAndMorty, type, 'species');
 
 printData(rickAndMorty);
+
+['Abi', 'jonh']
+
+// const onclickOrder = (type) => {
+//   if(type == 'a-z'){
+//     const result = rickAndMorty.sort((a,b) => {
+//       if(a.name > b.name){
+//         return 1
+//       } 
+//       if(a.name < b.name){
+//         return -1
+//       }
+//       return 0
+//     });
+//     printData(result);
+//   } else if(type == 'z-a'){
+//     const result = rickAndMorty.sort((a,b) => {
+//       if(a.name < b.name){
+//         return 1
+//       } 
+//       if(a.name > b.name){
+//         return -1
+//       }
+//       return 0
+//     });
+//     printData(result);
+//   }
+// }
+
+
+const onclickOrder = (type) => {
+  if(type == 'a-z'){
+    const result = rickAndMorty.sort((a,b) => a.name > b.name ? 1 : -1);
+    printData(result);
+  } else if(type == 'z-a'){
+    const result = rickAndMorty.sort((a,b) => a.name < b.name ? 1 : -1);
+    printData(result);
+  }
+}
+
+const onclickDate = (type) => {
+  if(type == 'nuevo'){
+    // const result = rickAndMorty.sort((a,b) => new Date(a.created).getTime() > new Date(b.created).getTime() ? 1 : -1)
+    const result = rickAndMorty.sort((a,b) => new Date(a.created).getTime() - new Date(b.created).getTime())
+    printData(result);
+  }
+  if(type == 'antiguo'){
+    const result = rickAndMorty.sort((a,b) =>  new Date(b.created).getTime() - new Date(a.created).getTime())
+    printData(result);
+  }
+}
 
